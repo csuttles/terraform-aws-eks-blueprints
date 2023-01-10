@@ -1,6 +1,6 @@
 # Summary
 
-This was a fin assignment! :D
+This was a fun assignment! :D
 This isn't where I want it to be but I ran out of time and "done" is better than "perfect". :)
 
 The idea is that instead of building our own terraform we leverage community contributions. These blueprints are actively maintained and support a lot of valuable addons, with just a few included here.
