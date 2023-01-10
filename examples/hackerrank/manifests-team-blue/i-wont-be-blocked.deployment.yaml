@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: i-wont-be-blocked
+  name: i-wont-be-blocked
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: i-wont-be-blocked
+  template:
+    metadata:
+      labels:
+        app: i-wont-be-blocked
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        securityContext:
+          privileged: true

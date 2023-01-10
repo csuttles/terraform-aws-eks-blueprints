@@ -1,3 +1,14 @@
+# Summary
+
+This was a fin assignment! :D
+This isn't where I want it to be but I ran out of time and "done" is better than "perfect". :)
+
+The idea is that instead of building our own terraform we leverage community contributions. These blueprints are actively maintained and support a lot of valuable addons, with just a few included here.
+
+To look into what I have so far, check [examples/hackerrank/README.md](examples/hackerrank/README.md)
+
+There's a series of posts on my blog about deploying Vault in OCI with terraform that includes a lot of detail, including me building terraform modules from scratch.
+
 # Amazon EKS Blueprints for Terraform
 
 [![e2e-terratest](https://github.com/aws-ia/terraform-aws-eks-blueprints/actions/workflows/e2e-terratest.yml/badge.svg)](https://github.com/aws-ia/terraform-aws-eks-blueprints/actions/workflows/e2e-terratest.yml)
