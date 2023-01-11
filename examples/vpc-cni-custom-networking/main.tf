@@ -79,8 +79,9 @@ module "eks" {
     }
   }
 
-  vpc_id                   = module.vpc.vpc_id
-  subnet_ids               = module.vpc.private_subnets
+  vpc_id = module.vpc.vpc_id
+  # We only want to assign the 10.0.* range subnets to the data plane
+  subnet_ids               = slice(module.vpc.private_subnets, 0, 3)
   control_plane_subnet_ids = module.vpc.intra_subnets
 
   eks_managed_node_groups = {
@@ -113,6 +114,7 @@ module "eks" {
         EOF
         # Source extra environment variables in bootstrap script
         sed -i '/^set -o errexit/a\\nsource /etc/profile.d/bootstrap.sh' /etc/eks/bootstrap.sh
+        sed -i 's/KUBELET_EXTRA_ARGS=$2/KUBELET_EXTRA_ARGS="$2 $KUBELET_EXTRA_ARGS"/' /etc/eks/bootstrap.sh
       EOT
     }
   }
